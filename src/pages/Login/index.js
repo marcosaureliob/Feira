@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import { Container, Titulo, InputContainer } from "./styles";
 import { Input, InputLabel, InputAdornment } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import { UsuarioContext } from "common/contexts/Usuario";
+import { UsuarioContext } from "common/context/Usuario";
 import { useContext } from "react";
 
 function Login() {
@@ -31,6 +31,7 @@ function Login() {
       <Button
         variant="contained"
         color="primary"
+        disabled={nome.length < 3}
         onClick={() => history.push("/feira")}
       >
         Avançar
